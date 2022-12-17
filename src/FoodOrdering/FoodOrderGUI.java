@@ -28,42 +28,62 @@ public class FoodOrderGUI extends JFrame {
     }
 
     public void foodOrder() {
-        double price = 0;
-        double order = 0;
-        if (cPizza.isSelected()) {
-            price += 100;
+        try{
+            double food = 0;
+            double price = 0;
+            boolean temp = false;
+
+            if (cPizza.isSelected()) {
+                food += 100;
+                temp = true;
+            }
+            if (cBurger.isSelected()) {
+                food += 80;
+                temp = true;
+            }
+            if (cFries.isSelected()) {
+                food += 65;
+                temp = true;
+            }
+            if (cSoftDrinks.isSelected()) {
+                food += 55;
+                temp = true;
+            }
+            if (cTea.isSelected()) {
+                food += 50;
+                temp = true;
+            }
+            if (cSundae.isSelected()) {
+                food += 40;
+                temp = true;
+            }
+            if (rbNone.isSelected()) {
+                food = food;
+                temp = true;
+            }
+            if (rb5.isSelected()) {
+                price = food * 0.05;
+                food = food - price;
+                temp = true;
+            }
+            if (rb10.isSelected()) {
+                price = food * 0.10;
+                food = food - price;
+                temp = true;
+            }
+            if (rb15.isSelected()) {
+                price = food * 0.15;
+                food = food - price;
+                temp = true;
+            }
+            if(temp == false) {
+                throw (new Exception("Invalid"));
+            }
+            JOptionPane.showMessageDialog(panel1, "The total price is Php " + String.format("%.2f", food));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage());
+            }
         }
-        if (cBurger.isSelected()) {
-            price += 80;
-        }
-        if (cFries.isSelected()) {
-            price += 65;
-        }
-        if (cSoftDrinks.isSelected()) {
-            price += 55;
-        }
-        if (cTea.isSelected()) {
-            price += 50;
-        }
-        if (cSundae.isSelected()) {
-            price += 40;
-        }
-        if (rbNone.isSelected()) {
-            price = price;
-        }
-        if (rb5.isSelected()) {
-            order = price * 0.05;
-            price = price - order;
-        }
-        if (rb10.isSelected()) {
-            order = price * 0.10;
-            price = price - order;
-        }
-        if (rb15.isSelected()) {
-            order = price * 0.15;
-            price = price - order;
-        }
-    }
 
     public static void main(String[] args) {
         FoodOrderGUI fOrder = new FoodOrderGUI();
