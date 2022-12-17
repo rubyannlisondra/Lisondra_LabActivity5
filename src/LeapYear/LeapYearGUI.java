@@ -1,6 +1,8 @@
 package LeapYear;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class LeapYearGUI {
     private JPanel panel1;
@@ -8,12 +10,12 @@ public class LeapYearGUI {
     private JButton btnCheckYear;
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
+        LeapYearGUI leapYear = new LeapYearGUI();
 
-        frame.setSize(400, 400);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setTitle("Leap Year Checker");
-
+        leapYear.setContentPane(leapYear.panel1);
+        leapYear.setSize(400, 400);
+        leapYear.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        leapYear.setVisible(true);
+        leapYear.setTitle("Leap Year Checker");
     }
 }
