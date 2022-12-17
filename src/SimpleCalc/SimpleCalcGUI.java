@@ -21,7 +21,27 @@ public class SimpleCalcGUI extends JFrame {
         });
     }
     public void calcComp() {
+        String operation = (String) cbOperations.getSelectedItem();
+        double num1 = Double.parseDouble(tfNumber1.getText());
+        double num2 = Double.parseDouble(tfNumber2.getText());
+        double answer = 0;
 
+        if (operation == "+") {
+            answer = num1 + num2;
+            lblResult.setText(String.valueOf(String.format("%.0f", (answer))));
+        }
+            if (operation == "-") {
+                answer = num1 - num2;
+                lblResult.setText(String.valueOf(String.format("%.0f", (answer))));
+            }
+                if (operation == "*") {
+                    answer = num1 * num2;
+                    lblResult.setText(String.valueOf(String.format("%.0f", (answer))));
+                }
+                    if (operation == "/") {
+                        answer = num1 / num2;
+                        lblResult.setText(String.valueOf(String.format("%.0f", (answer))));
+        }
     }
 
     public static void main(String[] args) {
