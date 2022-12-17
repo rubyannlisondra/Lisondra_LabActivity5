@@ -1,20 +1,17 @@
 package LeapYear;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class LeapYearGUI extends JFrame {
+public class LeapYearGUI {
     private JPanel panel1;
     private JTextField tfYear;
     private JButton btnCheckYear;
-
 
     public static void main(String[] args) {
         JFrame frame = new JFrame();
 
         frame.setSize(400, 400);
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setTitle("Leap Year Checker");
 
