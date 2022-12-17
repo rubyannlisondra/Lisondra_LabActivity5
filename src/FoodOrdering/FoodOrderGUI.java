@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 public class FoodOrderGUI extends JFrame {
     private JPanel panel1;
     private JCheckBox cPizza;
-    private JRadioButton noneRadioButton;
+    private JRadioButton rbNone;
     private JButton btnOrder;
     private JCheckBox cSoftDrinks;
     private JRadioButton rb5;
@@ -18,6 +18,52 @@ public class FoodOrderGUI extends JFrame {
     private JCheckBox cTea;
     private JCheckBox cSundae;
 
+    public FoodOrderGUI() {
+        btnOrder.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                foodOrder();
+            }
+        });
+    }
+
+    public void foodOrder() {
+        double price = 0;
+        double order = 0;
+        if (cPizza.isSelected()) {
+            price += 100;
+        }
+        if (cBurger.isSelected()) {
+            price += 80;
+        }
+        if (cFries.isSelected()) {
+            price += 65;
+        }
+        if (cSoftDrinks.isSelected()) {
+            price += 55;
+        }
+        if (cTea.isSelected()) {
+            price += 50;
+        }
+        if (cSundae.isSelected()) {
+            price += 40;
+        }
+        if (rbNone.isSelected()) {
+            price = price;
+        }
+        if (rb5.isSelected()) {
+            order = price * 0.05;
+            price = price - order;
+        }
+        if (rb10.isSelected()) {
+            order = price * 0.10;
+            price = price - order;
+        }
+        if (rb15.isSelected()) {
+            order = price * 0.15;
+            price = price - order;
+        }
+    }
 
     public static void main(String[] args) {
         FoodOrderGUI fOrder = new FoodOrderGUI();
